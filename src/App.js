@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState,useEffect } from "react";
 
-function App() {
+function App () {
+/*   let [ number, setNumber ] = useState( 10 );
+  let counter = () => {
+    number++
+    setNumber(number)
+  }
+  useEffect(() => {
+   console.log("this is use effect");
+  }, []) */
+  
+  let [ show, setShow ] = useState( false );
+  let showHide = () => {
+    setShow(!show)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <h1>{ number}</h1> */ }
+    {show?<div style={box}></div>:""}
+      
+    <button onClick={showHide}>click me</button>
+    
+    </>
   );
+}
+
+let box =
+{
+  background: "green",
+  width: "300px",
+  height:"300px"
 }
 
 export default App;
